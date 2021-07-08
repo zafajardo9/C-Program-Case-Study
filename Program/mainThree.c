@@ -1,13 +1,12 @@
 #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 
 /*
 NOTES:
 160 hrs worked. if hrs work exceed 160 hrs. then give overtime pay
-
 net pay => netpay = basic pay + overtime - deductions
-
 */
 struct emp {
     int employee_number;
@@ -68,7 +67,7 @@ void getValues(int i, int temp) {
         } else {
             break;
         }
-        
+
 		printf("Employee number must be a number\n");
     	printf("[%d]Enter Employee Number: ", i);
     	scanf("%*s");
@@ -103,7 +102,7 @@ void getValues(int i, int temp) {
     	scanf("%*s");
 	}
 
-    
+
     printf("[%d]Enter Basic Rate: ", i);
     while(scanf("%f", &e.basic_rate) <= 0) {
 		printf("Please enter a valid number!\n");
@@ -141,7 +140,7 @@ void getValues(int i, int temp) {
 
 
 int main() {
-    
+
     file = fopen("employee.txt", "wb+"); //can be r+
     if(file == NULL) {
         printf("WARNING!!! \nFILE CANNOT BE CREATED!!!");
@@ -170,7 +169,7 @@ int main() {
     while (fread(&e, size, 1, file) == 1)
 	{
 
-		printf("\n%d\t\t%s\t\t%s\t\t%.2f\t%.2f\t\t%.2f\t\t%.2f\n",
+		printf("\n%d\t%s\t%s\t\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\n",
 			e.employee_number,
 			e.employee_name,
             (*e.status_code == 'r' || *e.status_code == 'R') ? "Regular" : "Casual", // if status code == r or R, print Regular else Casual
