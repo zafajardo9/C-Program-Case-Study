@@ -169,7 +169,7 @@ int main() {
     while (fread(&e, size, 1, file) == 1)
 	{
 
-		printf("\n%d\t%s\t%s\t\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\n",
+		printf("\n%d\t\t\t%s\t%s\t\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\n",
 			e.employee_number,
 			e.employee_name,
             (*e.status_code == 'r' || *e.status_code == 'R') ? "Regular" : "Casual", // if status code == r or R, print Regular else Casual
